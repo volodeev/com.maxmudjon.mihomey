@@ -129,7 +129,7 @@ class MiRobot1S extends Homey.Device {
             let filterCurrentLife = parseInt(result[0]["filter_work_time"]);
             let filterLifeTimePercent = (filterCurrentLife / filterLifeTime) * 100;
             let sensorLifeTime = 108000;
-            let sensorCurrentLife = parseInt(result[0]["main_brush_work_time"]);
+            let sensorCurrentLife = parseInt(result[0]["sensor_dirty_time"]);
             let sensorLifeTimePercent = (sensorCurrentLife / sensorLifeTime) * 100;
 
             that.setSettings({ main_brush_work_time: parseInt(mainBrushLifeTimePercent) + "%" }).catch(error => this.log("Set Settings Error", error));
